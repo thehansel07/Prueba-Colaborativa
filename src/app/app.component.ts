@@ -1,6 +1,6 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { Add } from './state/count.actions';
+import { Add, Subtraction } from './state/count.actions';
 import { CountNumbers } from './state/state.state';
 
 @Component({
@@ -17,5 +17,9 @@ export class AppComponent implements OnInit {
 
   add() {
     this.store.dispatch(new Add(4));
+  }
+
+  subtraction(){
+    this.store.dispatch(new Subtraction(4))
   }
 }

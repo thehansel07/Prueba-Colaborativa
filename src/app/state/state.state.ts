@@ -4,7 +4,7 @@ import { StateContext } from '@ngxs/store';
 import { State } from '@ngxs/store';
 import { Action } from '@ngxs/store';
 import { Selector } from '@ngxs/store';
-import { Add } from './count.actions';
+import { Add, Subtraction } from './count.actions';
 
 interface ICounter {
   count: number;
@@ -30,6 +30,17 @@ export class CountNumbers {
     const { count } = getState();
     return patchState({
       count: count + add,
+    });
+  }
+
+  @Action(Subtraction)
+  subtraction(
+    { setState, getState, patchState }: StateContext<ICounter>,
+    { subtraction }: Subtraction
+  ) {
+    const { count } = getState();
+    return patchState({
+      count: count - subtraction,
     });
   }
 }
