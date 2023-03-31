@@ -19,7 +19,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="movieContainer">
         <div>
             <div class="movieTitle">
                 <h1>movieTitle</h1>
@@ -36,7 +36,15 @@
         {
             fetch("https://api.themoviedb.org/3/movie/popular?api_key=0d7af6e3da0ae0b1dc791b783669fcb2&language=en-US")
             .then((response) => response.json())
-            .then((data) => console.log(data));
+            .then((data) =>{
+                let movieContainer = document.getElementById("movieContainer");
+
+                movieContainer.appendChild(`
+                    <ul>
+                        <li>helooo</li>
+                    </ul>
+                `)
+            });
 
         };
 
