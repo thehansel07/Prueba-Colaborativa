@@ -32,9 +32,18 @@
     
     <script>
         
-        function click() {
-            alert
-        }
+        function GetAllMovies()
+        {
+            fetch("https://api.themoviedb.org/3/movie/popular?api_key=0d7af6e3da0ae0b1dc791b783669fcb2&language=en-US")
+            .then((response) => response.json())
+            .then((data) => console.log(data));
+
+        };
+
+
+       
+        
+        alert("Aqui esta mi lista", GetAllMovies());
     </script>
 </body>
 </html>
