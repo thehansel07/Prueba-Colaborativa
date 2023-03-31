@@ -13,11 +13,19 @@
 
         function GetAllMovies()
         {
-            fetch("http://api.themoviedb.org/3/popular?api_key=0d7af6e3da0ae0b1dc791b783669fcc2&language=en-US")
+            var info;
+             fetch("https://api.themoviedb.org/3/movie/popular?api_key=0d7af6e3da0ae0b1dc791b783669fcb2&language=en-US")
             .then((response) => response.json())
             .then((data) => console.log(data));
+            info = data;
+            return info;
 
         };
+
+
+       
+        
+        alert("Aqui esta mi lista", GetAllMovies());
 
     </script>
 </body>
