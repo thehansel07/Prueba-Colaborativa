@@ -20,12 +20,17 @@
     </header>
 
     <main id="movieContainer">
-        <div>
-            <div class="movieTitle">
+        <div class="card">
+            <div class="cartImg">
+                <img src="" alt="">
+            </div>
+            <div class="cardTitle">
                 <h1>movieTitle</h1>
             </div>
             <div class="movieBody">
-                
+                <p>
+
+                </p>
             </div>
         </div>
     </main>
@@ -39,8 +44,14 @@
             .then((data) =>{
                 let movieContainer = document.getElementById("movieContainer");
 
-                let createElement = document.createElement('li')
+                let cartContainer = document.createElement('div');
+                
+                let cartImg = document.createElement('img');
+                let cartTitle = document.createElement('h1')
+                cartTitle.appendChild('test');
 
+                cartContainer.appendChild(cartTitle)
+                cartContainer.appendChild(cartImg);
                 movieContainer.appendChild(createElement)
             });
 
