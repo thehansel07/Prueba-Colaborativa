@@ -42,17 +42,21 @@
             fetch("https://api.themoviedb.org/3/movie/popular?api_key=0d7af6e3da0ae0b1dc791b783669fcb2&language=en-US")
             .then((response) => response.json())
             .then((data) =>{
-                let movieContainer = document.getElementById("movieContainer");
 
-                let cartContainer = document.createElement('div');
-                
-                let cartImg = document.createElement('img');
-                let cartTitle = document.createElement('h1');
-                cartTitle.appendChild('test');
-
-                cartContainer.appendChild(cartTitle);
-                cartContainer.appendChild(cartImg);
-                movieContainer.appendChild(cartContainer);
+                data.forEach(element => {
+                    
+                    let movieContainer = document.getElementById("movieContainer");
+    
+                    let cartContainer = document.createElement('div');
+                    
+                    let cartImg = document.createElement('img');
+                    let cartTitle = document.createElement('h1');
+                    cartTitle.appendChild('test');
+    
+                    cartContainer.appendChild(cartTitle);
+                    cartContainer.appendChild(cartImg);
+                    movieContainer.appendChild(cartContainer);
+                });
             });
 
         };
